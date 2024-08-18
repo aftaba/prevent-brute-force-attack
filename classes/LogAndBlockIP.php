@@ -43,7 +43,7 @@ class LogAndBlockIP {
             'username' => $username,
             'password' => $password,
             'user_ip' => $ip,
-            'last_attempt' => date_i18n("Y-m-d h:i:s")
+            'last_attempt' => date_i18n("Y-m-d H:i:s")
         ));
     }
 
@@ -56,7 +56,7 @@ class LogAndBlockIP {
         global $wpdb;
         $table_name = DatabaseHelper::get_failed_logins_table_name();
         
-        $time_to_check = date_i18n("Y-m-d h:i:s", current_time('timestamp') - self::REQUEST_TIME );
+        $time_to_check = date_i18n("Y-m-d H:i:s", current_time('timestamp') - self::REQUEST_TIME );
 
         //@todo use preprare
         $query = "SELECT COUNT(*) as request_count FROM $table_name  WHERE last_attempt >= '$time_to_check' AND user_ip = '$ip'";
@@ -80,7 +80,7 @@ class LogAndBlockIP {
 
         $wpdb->insert($table_name,  array(
             'user_ip' => $ip,
-            'blocked_at' => date_i18n("Y-m-d h:i:s"),
+            'blocked_at' => date_i18n("Y-m-d H:i:s"),
         ));
     }
 
