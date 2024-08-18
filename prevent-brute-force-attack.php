@@ -31,4 +31,5 @@ define( 'PLUGIN_VERSION', '1.0.0' );
 require_once "classes/DatabaseHelper.php";
 require_once "classes/LogAndBlockIP.php";
 require_once "classes/ReleaseIP.php";
+require_once "classes/ForbidRequest.php";
 require_once "classes/UninstallPlugin.php";
