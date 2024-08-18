@@ -1,4 +1,3 @@
-
 # Prevent Brute Force Attack
 
 This plugin is designed for blocking ips which are trying to bruteforce login via some scripts.
