@@ -37,7 +37,7 @@ class DatabaseHelper {
     /**
      * Create table failed_logins if not exist.
      */
-    public static function create_failed_logins_table() {
+    private static function create_failed_logins_table() {
         global $wpdb;
         $charset_collate = $wpdb->get_charset_collate();
         
@@ -59,7 +59,7 @@ class DatabaseHelper {
     /**
      * Create table blocked_ips if not exist.
      */
-    public static function create_blocked_ips_table() {
+    private static function create_blocked_ips_table() {
         global $wpdb;
         $charset_collate = $wpdb->get_charset_collate();
         
